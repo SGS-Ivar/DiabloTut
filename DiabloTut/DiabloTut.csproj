@@ -45,6 +45,9 @@
   <ItemGroup>
     <Compile Include="Base\Enemy.cs" />
     <Compile Include="Base\Game.cs" />
+    <Compile Include="Base\HealthPotion.cs" />
+    <Compile Include="Base\Inventory.cs" />
+    <Compile Include="Base\Item.cs" />
     <Compile Include="Base\Player.cs" />
     <Compile Include="Base\Room.cs" />
     <Compile Include="Program.cs" />

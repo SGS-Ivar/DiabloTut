@@ -31,7 +31,7 @@ namespace DiabloTut.Base
                 }
                 else if (tempChoice == "2")
                 {
-
+                    myPlayer.AccessInventory.ShowInventory();
                 }
                 else if(tempChoice == "3")
                 {

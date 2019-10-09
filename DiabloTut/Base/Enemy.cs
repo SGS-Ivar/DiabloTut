@@ -8,15 +8,8 @@ namespace DiabloTut.Base
 {
     class Enemy
     {
-        private float myHealth;
-        private float myDamage;
-
-        //TEMPORARY
-        public void SetHealth(float aHealth) { myHealth = aHealth; }
-        public void SetDamage(float aDamage) { myDamage = aDamage; }
-
-        public float GetHealth() { return myHealth; }
-        public float GetDamage() { return myDamage; }
+        public float AccessHealth;
+        public float AccessDamage;
 
         private int myDifficulty;
 
@@ -29,8 +22,8 @@ namespace DiabloTut.Base
         private void Initialize()
         {
             //Change to random
-            myHealth = 3 * myDifficulty + 20;
-            myDamage = myDifficulty + 5;
+            AccessHealth = 3 * myDifficulty + 20;
+            AccessDamage = myDifficulty + 5;
         }
     }
 }

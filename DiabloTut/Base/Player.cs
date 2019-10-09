@@ -8,15 +8,10 @@ namespace DiabloTut.Base
 {
     class Player
     {
-        private float myHealth;
-        private float myDamage;
+        public float AccessHealth;
+        public float AccessDamage;
 
-        //TEMPORARY
-        public void SetHealth(float aHealth) { myHealth = aHealth; }
-        public void SetDamage(float aDamage) { myDamage = aDamage; }
-
-        public float GetHealth() { return myHealth; }
-        public float GetDamage() { return myDamage; }
+        public Inventory AccessInventory;
 
         //Static
         static Player myInstance;
@@ -25,8 +20,10 @@ namespace DiabloTut.Base
         {
             myInstance = this;
 
-            myHealth = aHealth;
-            myDamage = aDamage;
+            AccessHealth = aHealth;
+            AccessDamage = aDamage;
+
+            AccessInventory = new Inventory();
         }
 
         public static Player Get()
