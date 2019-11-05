@@ -17,7 +17,21 @@ namespace DiabloTut.Base
 
         public override void Use(Player aPlayer)
         {
-            aPlayer.AccessHealth += AccessHealthAdd;
+            if (aPlayer.AccessHealth < aPlayer.GetMaxHealth)
+            {
+                aPlayer.AccessHealth += AccessHealthAdd;
+
+                if (aPlayer.AccessHealth > aPlayer.GetMaxHealth)
+                {
+                    aPlayer.AccessHealth = aPlayer.GetMaxHealth;
+                }
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("You already have max health!");
+                Console.ReadKey();
+            }
             base.Use(aPlayer);
         }
     }

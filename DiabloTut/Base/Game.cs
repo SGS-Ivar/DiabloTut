@@ -18,6 +18,11 @@ namespace DiabloTut.Base
 
             do
             {
+                for (int i = 0; i < myPlayer.AccessInventory.AccessInventory.Count; i++)
+                {
+                    myPlayer.AccessInventory.AccessInventory[i].Update();
+                }
+
                 Console.Clear();
                 Console.WriteLine("1. Enter new room");
                 Console.WriteLine("2. Show Inventory");

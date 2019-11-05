@@ -50,6 +50,7 @@
     <Compile Include="Base\Item.cs" />
     <Compile Include="Base\Player.cs" />
     <Compile Include="Base\Room.cs" />
+    <Compile Include="Base\Scroll.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

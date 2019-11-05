@@ -22,7 +22,12 @@ namespace DiabloTut.Base
 
             do
             {
-                if (myEnemies.Count <= 0 || Player.Get().AccessHealth <= 0)
+                if (myEnemies.Count == 0)
+                {
+                    return;
+                }
+
+                if (Player.Get().AccessHealth <= 0)
                 {
                     do
                     {
@@ -88,7 +93,16 @@ namespace DiabloTut.Base
 
             for (int i = 0; i < tempRandom.Next(1, 4); i++)
             {
-                myLoot.Add(new HealthPotion("Health potion", 10));
+                int tempNum = tempRandom.Next(0, 8);
+
+                if (tempNum <= 7)
+                {
+                    myLoot.Add(new HealthPotion("Health potion", 10));
+                }
+                else if (tempNum > 7)
+                {
+                    myLoot.Add(new Scroll("Scroll"));
+                }
             }
         }
 
@@ -138,7 +152,19 @@ namespace DiabloTut.Base
                     }
                     else if (tempChoice == "2")
                     {
+                        Random tempRandom = new Random();
+                        int tempNum = tempRandom.Next(1, 10 + 1);
 
+                        if (tempNum > Player.Get().AccessStats.AccessAgility)
+                        {
+                            Player.Get().AccessHealth -= myEnemies[i].AccessDamage * 0.25f;
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("The enemy missed it's attack!");
+                            Console.ReadKey();
+                        }
                     }
                     else if(tempChoice == "3")
                     {

@@ -16,5 +16,6 @@ namespace DiabloTut.Base
         }
 
         public virtual void Use(Player aPlayer) { }
+        public virtual void Update() { }
     }
 }
